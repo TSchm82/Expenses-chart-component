@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Expenses chart component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    body {
+      background-color: hsl(27, 66%, 92%);
+      font-family: Arial, Helvetica, sans-serif;
+      display: block;
+      min-height: 100vh;
+    }
+
+    .balance-bar-div {
+      font-size: 18px;
+      background-color: hsl(10, 79%, 65%);
+      color: white;
+      height: 10%;
+      padding: 20px;
+    }
+
+    .graphs {
+      background-color: white;
+      font-size: 18px;
+      height: 70%;
+      padding: 20px;
+    }
+
+    .bar-container {
+      position: absolute;
+    }
+
+    .bar {
+      background-color: hsl(10, 79%, 65%);
+      width: 25px;
+      margin: 5px;
+      float: left;
+      position: absolute;
+    }
+
+    .bar:hover {
+      background-color: hsl(186, 34%, 60%)
+    }
   </style>
+
+  <script type="text/javascript" src="./fetchData.js"></script>
 </head>
+
 <body>
-
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="balance-bar-div">
+    test
   </div>
+
+  <div class="graphs" id="graphs">
+    <p>Spending last 7 days</p>
+    <div class="bar-container" id="bar-container"></div>
+  </div>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
 </body>
+
 </html>
