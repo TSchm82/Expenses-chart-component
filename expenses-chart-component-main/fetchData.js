@@ -8,20 +8,35 @@ async function renderGraphs() {
 
 async function createBars(spendings) {
     const container = document.getElementById("graphs-container")
-    const maximumValue = findMaximum(spendings.map(e => e.amount));
+    const maximumHeight = findMaximum(spendings.map(e => e.amount));
 
-    div = document.createElement('div');
+    spendings.forEach((spending, index) => {
+        barContainer = document.createElement('div');
+        barContainer.classList.add('bar-container');
 
-    spendings.forEach(spending => {
-        node = document.createElement('div');
-        node.innerHTML = spending.day;
-        node.classList.add('bar-container');
-        // node.style.height = `${spending.amount}px`;
+        if (index !== spendings.length - 1) {
+            barContainer.classList.add('bar-spacer-right');
+        }
 
-        div.appendChild(node);
+        const barHeight = spending.amount;
+
+        spacer = document.createElement('div');
+        spacer.classList.add('bar-spacer-top');
+        spacer.style.height = `${95 * (maximumHeight - barHeight) / maximumHeight}%`;
+
+        bar = document.createElement('div');
+        bar.classList.add('bar');
+        bar.style.height = `${95 * barHeight / maximumHeight}%`;
+
+        info = document.createElement('p')
+        info.innerHTML = spending.day;
+
+        barContainer.appendChild(spacer);
+        barContainer.appendChild(bar);
+        barContainer.appendChild(info);
+
+        container.appendChild(barContainer)
     })
-
-    container.appendChild(div);
 }
 
 async function fetchData() {
