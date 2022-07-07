@@ -1,12 +1,26 @@
+var balance;
+
 renderGraphs();
 
 async function renderGraphs() {
     const data = await fetchData();
 
+    calculateBalance(data);
     createBars(data);
 }
 
-async function createBars(spendings) {
+function calculateBalance(spendings) {
+    const balance = spendings
+        .map(e => e.amount)
+        .reduce((previousValue, currentValue) =>
+            currentValue + previousValue, 0);
+
+    const balanceInfo = document.getElementById("balance-info");
+
+    balanceInfo.innerHTML = `$ ${balance}`;
+}
+
+function createBars(spendings) {
     const container = document.getElementById("graphs-container")
     const maximumHeight = findMaximum(spendings.map(e => e.amount));
 
@@ -20,17 +34,27 @@ async function createBars(spendings) {
 
         const barHeight = spending.amount;
 
+        infoSpace = document.createElement('div');
+        infoSpace.classList.add('info-spacer');
+        infoSpace.innerHTML = `$ ${spending.amount}`;
+
         spacer = document.createElement('div');
         spacer.classList.add('bar-spacer-top');
-        spacer.style.height = `${95 * (maximumHeight - barHeight) / maximumHeight}%`;
+        spacer.style.height = `${70 * (maximumHeight - barHeight) / maximumHeight}%`;
 
         bar = document.createElement('div');
         bar.classList.add('bar');
-        bar.style.height = `${95 * barHeight / maximumHeight}%`;
 
-        info = document.createElement('p')
+        if (barHeight === maximumHeight) {
+            bar.classList.add('maximum');
+        }
+
+        bar.style.height = `${70 * barHeight / maximumHeight}%`;
+
+        info = document.createElement('span');
         info.innerHTML = spending.day;
 
+        barContainer.appendChild(infoSpace);
         barContainer.appendChild(spacer);
         barContainer.appendChild(bar);
         barContainer.appendChild(info);
@@ -49,5 +73,5 @@ async function fetchData() {
 
 function findMaximum(spendings) {
     return spendings.reduce((previousValue, currentValue) =>
-        currentValue >= previousValue ? currentValue : previousValue, 5);
+        currentValue >= previousValue ? currentValue : previousValue, 0);
 }

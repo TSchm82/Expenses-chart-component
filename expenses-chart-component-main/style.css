@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -7,8 +9,10 @@
     color: hsl(228, 45%, 44%);
 }
 
+
 * {
     box-sizing: border-box;
+    font-family: 'DM Sans';
 }
 
 body {
@@ -17,62 +21,94 @@ body {
     margin: 0px;
 }
 
-h1 {
-    font-weight: 700;
-    font-size: 36px;
-    text-align: left;
-}
-
 p {
     font-weight: 400;
     font-size: 18px;
-    text-align: left;
-}
-
-p.bar-container {
-    height: 5%;
-}
-
-.centric {
+    margin: 0px;
     display: flex;
-    justify-content: center;
-    position: relative;
+    align-items: center;
+    justify-content: left;
 }
 
 .balance-container {
     background-color: hsl(10, 79%, 65%);
     color: white;
-    padding: 5%;
-    height: 10vh;
-    width: 50vw;
+    padding: 25px 5%;
+    height: 15vh;
+    width: 40vw;
     margin: 15vh auto 5vh auto;
     border-radius: 25px;
 }
 
-.graphs-container {
+.balance-info {
+    font-weight: 700;
+    font-size: 42px;
+}
+
+.balance-chart {
+    padding: 2% 5%;
     border-radius: 25px;
     background-color: white;
     height: 55vh;
-    width: 50vw;
-    margin: 0 auto auto;
-    padding: 5%;
+    width: 40vw;
+    margin: 0 auto 10vh;
+    overflow: hidden;
+}
+
+.graphs-container {
+    height: 60%;
+}
+
+.graph-header {
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 4.5%;
+}
+
+.bar-container:hover .info-spacer {
+    width: 130%;
+    background-color: #000000;
+    position: relative;
+    right: 15%;
 }
 
 .bar-container {
-    width: 13%;
-    height: 50%;
+    width: 10%;
+    height: 100%;
     display: block;
     float: left;
+}
+
+.info-spacer {
+    height: 15%;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: auto;
+    font-weight: 700;
+    margin-bottom: 10%;
+}
+
+span {
+    height: 5%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey
 }
 
 .bar {
     width: 100%;
     display: block;
+    border-radius: 10px;
     background-color: hsl(10, 79%, 65%);
 }
 
 .bar-spacer-right {
-    margin-right: 1.5%;
+    margin-right: 5%;
 }
 
 .bar-spacer-top {
@@ -81,6 +117,10 @@ p.bar-container {
     display: block;
 }
 
-.bar:hover {
+.bar.maximum {
     background-color: hsl(186, 34%, 60%)
+}
+
+.bar:hover {
+    background-color: rgb(237, 167, 126) !important;
 }
