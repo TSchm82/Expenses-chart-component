@@ -7,17 +7,21 @@ async function renderGraphs() {
 }
 
 async function createBars(spendings) {
-    const container = document.getElementById("bar-container")
+    const container = document.getElementById("graphs-container")
     const maximumValue = findMaximum(spendings.map(e => e.amount));
+
+    div = document.createElement('div');
 
     spendings.forEach(spending => {
         node = document.createElement('div');
         node.innerHTML = spending.day;
-        node.classList.add('bar');
-        node.style.height = `${spending.amount}px`;
+        node.classList.add('bar-container');
+        // node.style.height = `${spending.amount}px`;
 
-        container.appendChild(node);
+        div.appendChild(node);
     })
+
+    container.appendChild(div);
 }
 
 async function fetchData() {

@@ -1,0 +1,60 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(27, 66%, 92%);
+    min-height: 100vh;
+    margin: 0px;
+    padding: 15%;
+}
+
+p {
+    font-weight: 700;
+    font-size: 26px;
+    text-align: left;
+}
+
+.centric {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.balance-container {
+    font-size: 18px;
+    background-color: hsl(10, 79%, 65%);
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+.graphs-container {
+    border-radius: 25px;
+    background-color: white;
+    height: 50vh;
+    padding: 20px;
+}
+
+.bar-container {
+    background-color: hsl(10, 79%, 65%);
+    width: 10vh;
+    margin-right: 10px;
+    height: 10vh;
+    display: block;
+    float: left
+}
+
+.bar-container:hover {
+    background-color: hsl(186, 34%, 60%)
+}
