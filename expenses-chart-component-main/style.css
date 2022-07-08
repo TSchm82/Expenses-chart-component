@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
-}
-
-
 * {
     box-sizing: border-box;
     font-family: 'DM Sans';
@@ -23,33 +13,31 @@ body {
 
 p {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     margin: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
 }
 
 .balance-container {
     background-color: hsl(10, 79%, 65%);
     color: white;
-    padding: 25px 5%;
-    height: 15vh;
+    height: 13vh;
     width: 40vw;
     margin: 15vh auto 5vh auto;
     border-radius: 25px;
+    padding-top: 3vh;
+    padding-left: 3%;
 }
 
 .balance-info {
     font-weight: 700;
-    font-size: 42px;
+    font-size: 26px;
 }
 
 .balance-chart {
-    padding: 2% 5%;
+    padding: 2% 3%;
     border-radius: 25px;
     background-color: white;
-    height: 55vh;
+    height: 50vh;
     width: 40vw;
     margin: 0 auto 10vh;
     overflow: hidden;
@@ -123,4 +111,35 @@ span {
 
 .bar:hover {
     background-color: rgb(237, 167, 126) !important;
+}
+
+.bottom-info {
+    width: 100%;
+    display: flex;
+    float: left;
+}
+
+.bottom-colum {
+    width: 50%;
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.bottom-small {
+    color: grey;
+}
+
+.bottom-medium {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bottom-large {
+    font-size: 32px;
+    font-weight: 700;
+
+}
+
+.align-right {
+    text-align: right;
 }
