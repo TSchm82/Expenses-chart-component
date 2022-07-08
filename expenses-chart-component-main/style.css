@@ -74,7 +74,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: auto;
+    font-size: 12px;
     font-weight: 700;
     margin-bottom: 10%;
 }

@@ -54,8 +54,8 @@ function createBars(spendings) {
         info = document.createElement('span');
         info.innerHTML = spending.day;
 
-        barContainer.appendChild(infoSpace);
         barContainer.appendChild(spacer);
+        barContainer.appendChild(infoSpace);
         barContainer.appendChild(bar);
         barContainer.appendChild(info);
 
