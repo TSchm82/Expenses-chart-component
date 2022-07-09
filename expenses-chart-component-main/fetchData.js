@@ -17,7 +17,7 @@ function calculateBalance(spendings) {
 
     const balanceInfo = document.getElementById("balance-info");
 
-    balanceInfo.innerHTML = `$ ${balance}`;
+    balanceInfo.innerHTML = `$${balance}`;
 }
 
 function createBars(spendings) {
