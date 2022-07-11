@@ -27,6 +27,11 @@ p {
     padding: 3vh 3% 3vh 3%;
 }
 
+.balance-info {
+    font-weight: 700;
+    font-size: 26px;
+}
+
 .balance-chart {
     padding: 2% 3%;
     border-radius: 25px;
@@ -35,11 +40,6 @@ p {
     width: 40vw;
     margin: 0 auto 10vh;
     overflow: hidden;
-}
-
-.balance-info {
-    font-weight: 700;
-    font-size: 26px;
 }
 
 .graphs-container {
@@ -52,13 +52,6 @@ p {
     margin: 0 0 4.5%;
 }
 
-.bar-container:hover .info-spacer {
-    width: 130%;
-    background-color: #000000;
-    position: relative;
-    right: 15%;
-}
-
 .bar-container {
     width: 10%;
     height: 100%;
@@ -66,7 +59,14 @@ p {
     float: left;
 }
 
-.info-spacer {
+.bar-container:hover .info-spacer {
+    width: 130%;
+    background-color: #000000;
+    position: relative;
+    right: 15%;
+}
+
+.info-box {
     height: 15%;
     border-radius: 5px;
     color: white;
@@ -78,11 +78,10 @@ p {
     margin-bottom: 10%;
 }
 
-span {
+.column-info-day {
     height: 5%;
     margin-top: 10px;
     display: flex;
-    align-items: center;
     justify-content: center;
     color: grey
 }
@@ -150,7 +149,7 @@ span {
     float: left;
 }
 
-.balance-colum {
+.balance-column {
     width: 50%;
 }
 
@@ -160,9 +159,10 @@ span {
     height: 60px;
     border-color: white;
     border-style: solid;
-    margin-left: 50%;
     box-shadow:
         -30px 0 0 0px black;
+    display: flex;
+    float: right;
 }
 
 @media screen and (max-width: 700px) {
@@ -170,7 +170,7 @@ span {
     .balance-container,
     .balance-chart {
         width: 90vw;
-        transition: width 2s;
+        transition: width 0.5s;
     }
 
     .bottom-info {
