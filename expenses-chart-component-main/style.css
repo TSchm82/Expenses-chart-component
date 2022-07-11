@@ -24,7 +24,7 @@ p {
     width: 40vw;
     margin: 15vh auto 5vh auto;
     border-radius: 25px;
-    padding: 3% 3% 3% 3%;
+    padding: 3vh 3% 3vh 3%;
 }
 
 .balance-chart {
@@ -156,8 +156,8 @@ span {
 
 .circle {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-color: white;
     border-style: solid;
     margin-left: 50%;
@@ -170,6 +170,7 @@ span {
     .balance-container,
     .balance-chart {
         width: 90vw;
+        transition: width 2s;
     }
 
     .bottom-info {
