@@ -15,41 +15,39 @@ function calculateBalance(spendings) {
         .reduce((previousValue, currentValue) =>
             currentValue + previousValue, 0);
 
-    const balanceInfo = document.getElementById("balance-info");
+    const balanceInfo = document.getElementById("info-area__balance");
 
     balanceInfo.innerHTML = `$${balance}`;
 }
 
 function createBars(spendings) {
-    const container = document.getElementById("graphs-container")
+    const container = document.getElementById("balance")
     const maximumHeight = findMaximum(spendings.map(e => e.amount));
 
     // Create bar and add it to container
     spendings.forEach((spending, index) => {
-        barContainer = createElementAndAddClass('div', 'bar-container');
+        let barContainer = createElementAndAddClass('div', 'balance__bar-container');
 
         // Add space on the right
         if (index !== spendings.length - 1) {
-            barContainer.classList.add('bar-spacer-right');
+            barContainer.classList.add('balance__bar-spacer-right');
         }
 
         // Create Elements
-        infoBox = createElementAndAddClass('div', 'info-box', `$ ${spending.amount}`);
-        spacerTop = createElementAndAddClass('div', 'bar-spacer-top');
-        info = createElementAndAddClass('span', 'column-info-day', spending.day);
-        bar = createElementAndAddClass('div', 'bar');
+        infoBox = createElementAndAddClass('div', 'balance__heighlighted', `$ ${spending.amount}`);
+        spacerTop = createElementAndAddClass('div', 'balance__bar-spacer-top');
+        info = createElementAndAddClass('span', 'balance__day', spending.day);
+        bar = createElementAndAddClass('div', 'balance__bar');
 
         // Add Styling
         const barHeight = spending.amount;
         bar.style.height = `${70 * barHeight / maximumHeight}%`;
         spacerTop.style.height = `${70 * (maximumHeight - barHeight) / maximumHeight}%`;
 
-        // Style Maximum
+        // Style max spending
         if (barHeight === maximumHeight) {
             bar.classList.add('maximum');
         }
-
-        console.log(bar)
 
         // Append to container
         barContainer.appendChild(spacerTop);
@@ -68,7 +66,7 @@ function createElementAndAddClass(type, style, innerHTML) {
     if (!!innerHTML) {
         element.innerHTML = innerHTML;
     }
-    console.log(element)
+
     return element;
 }
 

@@ -4,52 +4,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
   <title>Frontend Mentor | Expenses chart component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
 
-  <script type="text/javascript" src="./fetchData.js"></script>
+  <script type="text/javascript" src="./render-graphs.js"></script>
 </head>
 
 <body>
-  <div class="balance-container">
-    <div class="balance-container-inner ">
-      <div class="balance-column">
-        <p>My balance</p>
-        <p class="balance-info" id="balance-info"></p>
-      </div>
 
-      <div class="balance-column">
-        <span class="circle"></span>
+  <!--Info-->
+  <div class="info-area">
+    <div class="info-area__column">
+      <div class="info-area__box justfify-left">
+        <div class="my-auto">
+          <p>My balance</p>
+          <p class="info-area__balance" id="info-area__balance"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-area__column">
+      <div class="info-area__box justfify-end">
+        <div class="info-area__box__circle my-auto"></div>
       </div>
     </div>
   </div>
 
-  <div class="balance-chart">
-    <p class="graph-header">Spending - Last 7 days</p>
-    <div class="graphs-container" id="graphs-container"></div>
+  <!--Main-->
+  <div class="main-area">
+    <p class="main__header">Spending - Last 7 days</p>
+    <div class="balance" id="balance"></div>
     <hr>
     <div class="bottom-info">
-      <div class="bottom-colum">
-        <div class="bottom-small">Total this month</div>
-        <div class="bottom-large">$478.33</div>
+      <div class="bottom-column">
+        <div class="bottom-column--left">
+          <div class="bottom-txt-sm">Total this month</div>
+          <div class="bottom-txt-xl">$478.33</div>
+        </div>
       </div>
-      <div class="bottom-colum align-right">
-        <div class="bottom-medium">+2.4%</div>
-        <div class="bottom-small">from last month</div>
+      <div class="bottom-column">
+        <div class="bottom-column--right">
+          <div class="bottom-txt-md">+2.4%</div>
+          <div class="bottom-txt-sm">from last month</div>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 </body>
 
 </html>
